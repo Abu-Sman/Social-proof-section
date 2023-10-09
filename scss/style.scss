@@ -1,0 +1,215 @@
+// CUSTOM PROPERTIES(VARIABLES)
+:root {
+  --color-primary: hsl(300, 43%, 22%);
+  --color-secondary: hsl(333, 80%, 67%);
+
+  --color-dark-gray: hsl(303, 10%, 53%);
+  --color-light-gray: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+// MIXINS
+@mixin laptop {
+  @media screen and (min-width: 90em) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 150em) {
+    @content;
+  }
+}
+
+// GENERAL RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--color-dark-gray);
+}
+
+.container {
+  min-height: 100vh;
+  background-image: url(../images/bg-pattern-top-mobile.svg),
+    url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+
+  @include desktop {
+    max-width: 80vw;
+    height: 80vh;
+    margin: 8rem auto;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1),
+      -1rem -1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+
+  @include laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+  }
+}
+
+.socialproof {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4rem;
+  padding: 6rem 3rem;
+  text-align: center;
+
+  @include laptop {
+    max-width: 120rem;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8rem;
+    text-align: left;
+  }
+
+  &--header {
+    @include laptop {
+      width: 70%;
+    }
+
+    .title {
+      padding: 0 2rem;
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 0.8;
+      letter-spacing: -0.5px;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+
+      @include laptop {
+        margin-top: -1.5rem;
+        font-size: 5.2rem;
+        padding: 0;
+      }
+    }
+
+    .text {
+      line-height: 1.2;
+    }
+  }
+
+  &--ratings {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+
+    @include laptop {
+      justify-items: center;
+    }
+
+    &-box {
+      background-color: var(--color-light-gray);
+      padding: 1.2rem 3rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 1rem;
+
+      @include laptop {
+        flex-direction: row;
+        gap: 3rem;
+        width: 70%;
+      }
+
+      .text {
+        color: var(--color-primary);
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+    }
+
+    .box-2 {
+      @include laptop {
+        transform: translateX(4rem);
+      }
+    }
+
+    .box-3 {
+      @include laptop {
+        justify-self: end;
+      }
+    }
+  }
+
+  &--cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+
+    @include laptop {
+      grid-column: 1 / -1;
+
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 3rem;
+    }
+
+    .card {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 3rem;
+      text-align: left;
+      border-radius: 1rem;
+
+      .customer-profile {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+
+        .customer-img {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 50%;
+        }
+
+        .name-box {
+          .name {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+          }
+
+          span {
+            display: inline-block;
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+          }
+        }
+      }
+
+      .testimonial {
+        line-height: 1.5;
+      }
+    }
+
+    .card-2 {
+      @include laptop {
+        transform: translateY(2rem);
+      }
+    }
+
+    .card-3 {
+      @include laptop {
+        transform: translateY(4rem);
+      }
+    }
+  }
+}

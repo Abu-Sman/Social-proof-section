@@ -1,0 +1,184 @@
+:root {
+  --color-primary: hsl(300, 43%, 22%);
+  --color-secondary: hsl(333, 80%, 67%);
+  --color-dark-gray: hsl(303, 10%, 53%);
+  --color-light-gray: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--color-dark-gray);
+}
+
+.container {
+  min-height: 100vh;
+  background-image: url(../images/bg-pattern-top-mobile.svg), url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+}
+@media screen and (min-width: 150em) {
+  .container {
+    max-width: 80vw;
+    height: 80vh;
+    margin: 8rem auto;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1), -1rem -1rem 1rem rgba(0, 0, 0, 0.1);
+  }
+}
+@media screen and (min-width: 90em) {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/bg-pattern-top-desktop.svg), url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right;
+  }
+}
+
+.socialproof {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4rem;
+  padding: 6rem 3rem;
+  text-align: center;
+}
+@media screen and (min-width: 90em) {
+  .socialproof {
+    max-width: 120rem;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 8rem;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 90em) {
+  .socialproof--header {
+    width: 70%;
+  }
+}
+.socialproof--header .title {
+  padding: 0 2rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.5px;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--header .title {
+    margin-top: -1.5rem;
+    font-size: 5.2rem;
+    padding: 0;
+  }
+}
+.socialproof--header .text {
+  line-height: 1.2;
+}
+.socialproof--ratings {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--ratings {
+    justify-items: center;
+  }
+}
+.socialproof--ratings-box {
+  background-color: var(--color-light-gray);
+  padding: 1.2rem 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--ratings-box {
+    flex-direction: row;
+    gap: 3rem;
+    width: 70%;
+  }
+}
+.socialproof--ratings-box .text {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--ratings .box-2 {
+    transform: translateX(4rem);
+  }
+}
+@media screen and (min-width: 90em) {
+  .socialproof--ratings .box-3 {
+    justify-self: end;
+  }
+}
+.socialproof--cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2rem;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--cards {
+    grid-column: 1/-1;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
+.socialproof--cards .card {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 3rem;
+  text-align: left;
+  border-radius: 1rem;
+}
+.socialproof--cards .card .customer-profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.socialproof--cards .card .customer-profile .customer-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+.socialproof--cards .card .customer-profile .name-box .name {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.socialproof--cards .card .customer-profile .name-box span {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--color-secondary);
+}
+.socialproof--cards .card .testimonial {
+  line-height: 1.5;
+}
+@media screen and (min-width: 90em) {
+  .socialproof--cards .card-2 {
+    transform: translateY(2rem);
+  }
+}
+@media screen and (min-width: 90em) {
+  .socialproof--cards .card-3 {
+    transform: translateY(4rem);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
